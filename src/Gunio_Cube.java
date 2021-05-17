@@ -2,7 +2,6 @@ import java.util.*;
 //Abstraction
 //Encap
 public class Gunio_Cube { // act as the main
-    //need palitan ang name ng class na to base sa filename
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
