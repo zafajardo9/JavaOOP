@@ -3,18 +3,21 @@ import java.util.*;
 public class Gunio_Matrix2 {
     public static void main(String[] args) {
 
+        int rows = 2, columns = 3;
+        int[][] array_A = {{2,3,4},
+                            {6,1,5}};
+        int[][] array_B = {{7,6,9},
+                            {10,6,3}};
 
-        int[] array_A = {2,3,4};
-        int[] array_B = {7,6,9};
-        int[][] array_C = new int[3][2];
-        addMatrices(array_A, array_B, array_C);
+        int[][] array_C = new int[rows][columns];
+        //method
+        addMatrices(array_A, array_B, array_C, rows, columns);
+
 
         System.out.println("Printing Array C");
-        //Printing
-        System.out.println(Arrays.deepToString(array_C));
         //for loop table printing
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 2; j++) {
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < columns; j++) {
                 System.out.print(array_C[i][j] + "\t");
             }
             System.out.println(" ");
@@ -22,18 +25,11 @@ public class Gunio_Matrix2 {
     }
 
 
-    public static void addMatrices(int[] array_A, int[] array_B, int[][] array_C) {
-
-        int i, j, k;
-        j = k = 0;
-
-        int newLength = array_A.length + array_B.length;
-
-
-        for(i = 0; i < array_C.length; i++) {
-            array_C[i][0] = array_A[i];
-            array_C[i][1] = array_B[i];
+    public static void addMatrices(int[][] array_A, int[][] array_B, int[][] array_C, int rows, int columns) {
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                array_C[i][j] = array_A[i][j] + array_B[i][j];
+            }
         }
-
     }
 }
